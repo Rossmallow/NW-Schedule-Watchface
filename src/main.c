@@ -93,7 +93,7 @@ static void update_time(int h, int m, int d) {
 	}
 	char endsState[] = "Ends: --:--";
 	int hours_12 = hours;
-	if (hours > 12) {
+	if (hours > 12 && clock_is_24h_style() == false) {
 		hours_12 -= 12;
 	}
 	if(getPeriod(h, m) != 'A' && d <= 5) {
