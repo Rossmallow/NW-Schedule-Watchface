@@ -1,0 +1,29 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "Rossmallow",
+    "longName": "Niles West Schedule",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/background.png",
+                "name": "BACKGROUND",
+                "type": "png"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "NW Schedule",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "6ce71f2a-6d82-4da9-8594-68cef2633407",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
