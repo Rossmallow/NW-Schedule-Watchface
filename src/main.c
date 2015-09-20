@@ -32,7 +32,7 @@ static void update_time(int h, int m, int d) {
 	// Create period buffer
 	static char period_buffer[32];
 	char periodState[] = "Period: -";
-	if (d <= 5) {
+	if ((d != 0 && d <= 5)) {
 		periodState[8] = getPeriod(h, m);
 	}
 	strftime(period_buffer, sizeof(period_buffer), periodState, tick_time);
@@ -96,7 +96,7 @@ static void update_time(int h, int m, int d) {
 	if (hours > 12 && clock_is_24h_style() == false) {
 		hours_12 -= 12;
 	}
-	if(getPeriod(h, m) != 'A' && d <= 5) {
+	if(getPeriod(h, m) != 'A' && (d != 0 && d <= 5)) {
 		endsState[6] = numbers[hours_12 / 10];
 		endsState[7] = numbers[hours_12 % 10];
 		endsState[9] = numbers[minutes / 10];
@@ -111,7 +111,7 @@ static void update_time(int h, int m, int d) {
 	int difference = endTime - currentTime;
 	
 	char leftState[] = "Time Left: --:--";
-	if (getPeriod(h, m) != 'A' && d <= 5) {
+	if (getPeriod(h, m) != 'A' && (d != 0 && d <= 5)) {
 		leftState[11] = numbers[(difference / 60) / 10];
 		leftState[12] = numbers[(difference / 60) % 10];
 		leftState[14] = numbers[(difference % 60) / 10];
